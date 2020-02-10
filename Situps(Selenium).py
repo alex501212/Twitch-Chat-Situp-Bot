@@ -7,16 +7,16 @@ import os
 import sys
 
 # user input
-channel = "https://www.twitch.tv/alex501212"  # "https://www.twitch.tv/" + input("Enter Twitch Channel: ")
-situp_count = 20  # int(input("Situp Count: "))
-interval_1 = 5  # float(input("Delay Range (Start): ") + ".0000")
-interval_2 = 6  # float(input("Delay Range (End): ") + ".0000")
-end_msg = "Kappa"  # input("Completion Message: ")
-interval_3 = 5  # float(input("Completion Message Delay Range (Start): ") + ".0000")
-interval_4 = 6  # float(input("Completion Message Delay Range (End): ") + ".0000")
-exit_after = "n"  # input("Shutdown After? (Y/N): ")
-user = "Lop501212"  # input("Username: ")  # Lop501212
-password = "Genius_501212"  # input("Password: ")  # Genius_501212
+channel = "https://www.twitch.tv/" + input("Enter Twitch Channel: ")
+situp_count = int(input("Situp Count: "))
+interval_1 = float(input("Delay Range (Start): ") + ".0000")
+interval_2 = float(input("Delay Range (End): ") + ".0000")
+end_msg = input("Completion Message: ")
+interval_3 = float(input("Completion Message Delay Range (Start): ") + ".0000")
+interval_4 = float(input("Completion Message Delay Range (End): ") + ".0000")
+exit_after = input("Shutdown After? (Y/N): ")
+user = input("Username: ")
+password = input("Password: ")
 
 # login and load channel
 driver = webdriver.Chrome("C:\chromedriver.exe")
