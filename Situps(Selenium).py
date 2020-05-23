@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
 import time
@@ -6,8 +7,12 @@ import random
 import os
 import sys
 
+#chrome options
+chromeOptions = Options()
+chromeOptions.add_argument("--headless")
+
 # user input
-channel = "https://www.twitch.tv/" + input("Enter Twitch Channel: ")
+channel = "https://www.twitch.tv/alex501212" + input("Enter Twitch Channel: ")
 situp_count = int(input("Situp Count: "))
 interval_1 = float(input("Delay Range (Start): ") + ".0000")
 interval_2 = float(input("Delay Range (End): ") + ".0000")
@@ -19,16 +24,16 @@ user = input("Username: ")
 password = input("Password: ")
 
 # login and load channel
-driver = webdriver.Chrome("C:\chromedriver.exe")
+driver = webdriver.Chrome("C:\chromedriver.exe", options=chromeOptions)
 driver.get("https://help.twitch.tv/s/?language=en_US")
-time.sleep(2)
-login = driver.find_element_by_xpath("/html/body/div[4]/div[1]/div/div[1]/div[5]/div/div/div/div/a/span")
+time.sleep(5)
+login = driver.find_element_by_xpath("/html/body/div[3]/div[1]/div/div[1]/div[5]/div/div/div/div/a/span")
 login.click()
-userbox = driver.find_element_by_id("username")
+userbox = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[3]/div/div/div/div[3]/form/div/div[1]/div/div[2]/input")
 userbox.send_keys(user)
-passwordbox = driver.find_element_by_xpath("/html/body/div/div/div[1]/div[2]/div/div[2]/form/div[2]/input")
+passwordbox = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[3]/div/div/div/div[3]/form/div/div[2]/div/div[1]/div[2]/div[1]/input")
 passwordbox.send_keys(password)
-login_confirm = driver.find_element_by_xpath("/html/body/div/div/div[1]/div[2]/div/div[2]/form/div[3]/button")
+login_confirm = driver.find_element_by_xpath("/html/body/div[1]/div/div[1]/div[3]/div/div/div/div[3]/form/div/div[3]/button")
 login_confirm.click()
 time.sleep(2)
 driver.get(channel)
