@@ -22,10 +22,10 @@ while i == 0:
     count += 1
 
     if count == 1001:
-        #slp = random.uniform(20.0000, 30.0000)
-        #time.sleep(slp)
-        #keyboard.write('WRAP IT UP DOMEY 4Weird')
-        #keyboard.press_and_release('enter')
+        slp = random.uniform(20.0000, 30.0000)
+        time.sleep(slp)
+        keyboard.write('END MESSAGE HERE')
+        keyboard.press_and_release('enter')
         break
     
-#os.system('shutdown -s')
+os.system('shutdown -s')

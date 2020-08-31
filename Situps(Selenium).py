@@ -12,7 +12,7 @@ chromeOptions = Options()
 chromeOptions.add_argument("--headless")
 
 # user input
-channel = "https://www.twitch.tv/alex501212" + input("Enter Twitch Channel: ")
+channel = "https://www.twitch.tv/" + input("Enter Twitch Channel: ")
 situp_count = int(input("Situp Count: "))
 interval_1 = float(input("Delay Range (Start): ") + ".0000")
 interval_2 = float(input("Delay Range (End): ") + ".0000")
